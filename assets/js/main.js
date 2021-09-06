@@ -8,123 +8,75 @@
  *          number：問題番号（数字） 1
  *          final ：最終ステージの場合 'final'
  *********************************************************************************************************/
-const app = Vue.createApp({
+const StageApp = Vue.createApp({
   data() {
-    /* 初期値を設定します */
-    return {
-      /* 解答
-      *  ex. 問題2-3を追加する場合はstage2の配列に解答を追加します。
-      *    q3: 'おおお',
-      */
-      correctAnswer: {
-        stage1: {
-          q1: 'あああ',
-        },
-        stage2: {
-          q1: 'いいい',
-          // q2: 'えええ',
-          // q3: 'おおお'
-        },
-        stage3: {
-          q1: 'ううう',
-          // q2: 'かかか',
-          // q3: 'ききき',
-        }
-      },
-
-      /* それぞれの問題が正解かどうか
-      *  ex. 問題2-3を追加する場合は配列にfalseを追加します。
-      */
-      answer: {
-        stage1: [
-          false,
-        ],
-        stage2: [
-          false, // 2-1
-          // false, // 2-2
-          // false, // 2-3
-        ],
-        stage3: [
-          false, // 3-1
-          // false, // 3-2
-          // false, // 3-3
-        ]
-      },
-
-      /* ステージの問題が全て正解かどうか */
-      clear: {
-        stage1: false,
-        stage2: false,
-        stage3: false,
-      },
-
-      /* 次のステージを表示するかどうか
-      *  最終ステージはページを遷移するので設定不要です。
-      */
-      next: {
-        stage1: false,
-        stage2: false,
-      },
-    }
-  },
-  methods: {
-    /* 「送信」ボタンをクリックした場合の動作です。 */
-    answerInput(event, stage, number, final) {
-      /* answerをtrueまたはfalseにします。 */
-      this.answer[stage][number-1] = event;
-      /* STAGEのすべての問題がtrueか調べてclearの値を変更します。*/
-      const result = this.answer[stage].every((element) => {
-        return element;
-      });
-      this.clear[stage] = result;
-      /* 最終ステージの入力を判定します。 */
-      if ( this.clear[stage] === true && final === 'final' ) {
-        window.location.href = 'final.html';
-      }
-    },
-    /* クリア画面「次のステージへ」ボタンをクリックした時の動作を設定します
-    *  clearをfalseにしてクリア画面を非表示にします。
-    *  nextをtrueにして次のステージを表示します。
-    */
-    nextStage(stage) {
-      this.clear[stage] = false;
-      this.next[stage] = true;
-    },
-  }
-})
-
-/* 解答入力欄のコンポーネント */
-app.component('answer-input', {
-  props: ['correct'],
-  data: function () {
     return {
       /* 送信ボタン上下に表示されるメッセージ */
-      okMessage: '正解！',
-      ngMessage: 'そのキーワードは違うようだぞ！？',
-      message: '',
-      inputAnswer: '',
+      okMessage: '犯人のアジトを突き止めた！',
+      ngMessage: 'この場所は犯人のアジトではないようだ。',
+      /* 解答 */
+      stage1CorrectAnswer: 'セントラルビル',
+      stage2CorrectAnswer: 'なんとか倉庫',
+      stage3CorrectAnswer: '1111'||'１１１１',
+      /* stage1 */
+      stage1Answer: false, // 正解かどうか
+      stage1: '',          // インプットエリアの入力の値
+      stage1Message: '',   // 送信ボタン上下に表示されるメッセージ
+      stage1Clear: false,  // ステージクリア
+      /* stage2 */
+      stage2Answer: false, // 正解かどうか
+      stage2: '',          // インプットエリアの入力の値
+      stage2Message: '',  // 送信ボタン上下に表示されるメッセージ
+      stage2Clear: false,  // ステージクリア
+      /* stage3 */
+      stage3Answer: false, // 正解かどうか
+      stage3: '',        // インプットエリアの入力の値
+      stage3Message: '',  // 送信ボタン上下に表示されるメッセージ
+      stage3Clear: false, // ステージクリア
     }
   },
-  template: `
-    <div class="answer__container">
-      <div class="answer">
-        <input type="text" v-model="inputAnswer" placeholder="ここに答えを入力しよう">
-      </div>
-      <p v-if="message === ngMessage" class="err-message">{{ message }}</p>
-      <button v-on:click="judgement(inputAnswer)">送信</button>
-      <p v-if="message === okMessage" class="err-message">{{ message }}</p>
-    </div>`,
   methods: {
-    judgement(answer) {
-      if(answer === this.correct) { // 入力値が解答と一致する場合
-        this.message = this.okMessage;
-        this.$emit('answerInput', true);
-      } else { // 一致しない場合
-        this.message = this.ngMessage; 
-        this.$emit('answerInput', false);
+    /* stage1の入力を判定します */
+    stage1AnswerInput(stage1) {
+      if(stage1 === this.stage1CorrectAnswer) {
+        this.stage1Answer = true;
+        this.stage1Message = '';
+      } else {
+        this.stage1Answer = false;
+        this.stage1Message = this.ngMessage; 
+      }
+    },
+    /* stage1のクリア画面の動作を設定します */
+    stage1NextStage() {
+      this.stage1Answer = false;
+      this.stage1Clear = true;
+    },
+    /* stage2の入力を判定します */
+    stage2AnswerInput(stage2) {
+      if(stage2 === this.stage2CorrectAnswer) {
+        this.stage2Answer = true;
+        this.stage2Message = this.okMessage;
+      } else {
+        this.stage2Answer = false;
+        this.stage2Message = this.ngMessage;
+      }
+    },
+    /* stage2のクリア画面の動作を設定します */
+    stage2NextStage() {
+      this.stage2Answer = false;
+      this.stage2Clear = true;
+    },
+    /* stage3の入力を判定します */
+    stage3AnswerInput(stage3) {
+      if(stage3 === this.stage3CorrectAnswer
+        ) {
+        this.stage3Answer = true;
+        this.stage3Message = '';
+        window.location.href = 'final.html';
+      } else {
+        this.stage3Answer = false;
+        this.stage3Message = this.ngMessage;
       }
     },
   }
-})
-
-app.mount('#stage')
+}).mount('#stage')
