@@ -5,6 +5,7 @@ const StageApp = Vue.createApp({
       okMessage: '犯人のアジトを突き止めた！',
       ngMessage: 'この場所は犯人のアジトではないようだ。',
       ngMessage2: 'この場所は監禁場所ではない',
+      ngMessage3: 'この番号は違うようだ',
       /* 解答 */
       stage1CorrectAnswer: 'セントラルビル',
       stage2CorrectAnswer: 'なんとか倉庫',
@@ -66,7 +67,7 @@ const StageApp = Vue.createApp({
         window.location.href = 'final.html';
       } else {
         this.stage3Answer = false;
-        this.stage3Message = this.ngMessage;
+        this.stage3Message = this.ngMessage3;
       }
     },
   }
