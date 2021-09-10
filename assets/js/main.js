@@ -4,6 +4,7 @@ const StageApp = Vue.createApp({
       /* 送信ボタン上下に表示されるメッセージ */
       okMessage: '犯人のアジトを突き止めた！',
       ngMessage: 'この場所は犯人のアジトではないようだ。',
+      ngMessage2: 'この場所は監禁場所ではない',
       /* 解答 */
       stage1CorrectAnswer: 'セントラルビル',
       stage2CorrectAnswer: 'なんとか倉庫',
@@ -48,7 +49,7 @@ const StageApp = Vue.createApp({
         this.stage2Message = this.okMessage;
       } else {
         this.stage2Answer = false;
-        this.stage2Message = this.ngMessage;
+        this.stage2Message = this.ngMessage2;
       }
     },
     /* stage2のクリア画面の動作を設定します */
