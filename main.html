@@ -32,11 +32,11 @@
         <section class="section">
           <div class="container">
             <h2 class="section-title section-title--keycolorlight"><span class="section-title__stage">STAGE：1</span>犯人のアジトを突き止めよう</h2>
-            <p class="text-center">誘拐犯はきっと転校生と一緒の場所にいるはずだ<br>
-            　下に現場周辺の地図と〜が載っている。これをもとに、犯人のアジトを突き止めよう</p>
-            <p class="text-center">一緒に捜査してくれる名探偵もいる。困ったときには、彼の話を聞いてみるのもいいかもしれない</p>
-            <div class="youtube__container">
-            </div>
+            <p class="text-center">転校生が誘拐されてしまった！<br>
+              犯人は「きた公園」で転校生を誘拐し、西に逃げていったようだ。<br>
+              さらに犯人は挑戦状を送ってきた！<br>
+              下に犯人の目撃情報を示した警察の地図と、犯人が送ってきた挑戦状が載っている。これをもとに、犯人のアジトを突き止めよう。</p>
+            <p class="text-center">一緒に捜査してくれる名探偵もいる。困ったときには、彼の話を聞いてみるのもいいかもしれない。</p>
           </div>
         </section>
         <!-- STAGE1問題セクション　ここまで -->
@@ -57,7 +57,7 @@
                 <!-- STAGE1　上右　ここから -->
                 <div class="col-2">
                   <!-- STAGE1 問題セクション　ここから -->
-                  <h2>犯人の地図</h2>
+                  <h2>犯人のからの挑戦状</h2>
                   <figure class="image__container">
                     <img src="assets/images/かるいはんにんの地図_リサイズ.jpg" alt="はんにんのちず" title="はんにんのちず">
                   </figure>
@@ -100,11 +100,12 @@
         <!-- STAGE2問題セクション　ここから -->
         <section class="section">
           <div class="container">
-            <h2 class="section-title section-title--keycolorlight"><span class="section-title__stage">STAGE：2</span>転校生が監禁されている場所を突き止めよう</h2>
+            <h2 class="section-title section-title--keycolorlight"><span class="section-title__stage">STAGE：2</span>転校生の居場所を突き止めよう</h2>
             <p class="text-center">犯人を捕まえることができた！<br>
               ところが、犯人は転校生を別の場所に監禁したようだ...<br>
-              また、転校生は犯人とブログで知り合ったようだ。転校生のブログから何か分かるかもしれない<br>
-              急げ！時間がない...</p>
+              犯人に話を聞くと、犯人は転校生とネットで知り合ったらしい。<br>
+              転校生のブログから、転校生の居場所を突き止めよう！
+              </p>
             <div align="center">
               <table border="0">
                 <h2>転校生のブログ</h2>
@@ -120,9 +121,9 @@
         <!-- STAGE2解答入力セクション　ここから -->
         <section class="section bg-color--keycolor">
           <div class="container">
-            <h2 class="section-title"><span class="section-title__stage">STAGE：2</span>転校生が監禁されている場所を突き止めよう</h2>
+            <h2 class="section-title"><span class="section-title__stage">STAGE：2</span>転校生の居場所を突き止めよう</h2>
             <div class="answer">
-              <input class="answer__1word" type="text" v-model="stage2" placeholder="ここに監禁場所を入力しよう">
+              <input class="answer__1word" type="text" v-model="stage2" placeholder="ここに転校生の居場所を入力しよう">
             </div>
             <p class="err-message">{{ stage2Message }}</p>
             <button v-on:click="stage2AnswerInput(stage2)">送信</button>
@@ -135,8 +136,8 @@
           <div class="container">
             <div class="clear-message">
               <div class="clear-message__title">STAGE：2　クリア！</div>
-              <div class="clear-message__content">見事、転校生の監禁されている場所が分かったぞ！<br>
-              倉庫へ向かうと...どうやらドアには鍵がかかっているようだ<br>
+              <div class="clear-message__content">見事、転校生の居場所が分かったぞ！<br>
+              エクストラビルへ向かうと...どうやらドアには鍵がかかっているようだ<br>
               暗証番号を入力して、転校生を助け出そう！</div>
                 <button v-on:click="stage2NextStage" onclick="location.href='#sectionStage3'" class="clear-message__btn btn">次のステージへ<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></button>
             </div>
@@ -151,11 +152,13 @@
         <section class="section">
           <div class="container">
             <h2 class="section-title section-title--keycolorlight"><span class="section-title__stage">STAGE：3</span>暗証番号を入力して、転校生を助け出そう！</h2>
-            <p class="text-center"><br>転校生の監禁されている場所を見つけ出した！
-              ただ、ドアは暗証番号を入力しないと開かないみたいだ...<br>
-              暗証番号はなんだろう...</p>
+            <p class="text-center"><br>転校生の居場所を突き止めた！
+              ただ、ドアには鍵がかかっていて、暗証番号を入力しないと開かないみたいだ...<br>
+              また、犯人の持ち物から破れた謎のメモが見つかった！<br>
+            　　　　転校生が監禁されている部屋にも同じようなメモがあるらしい<br>
+            　　　　転校生の話から、破れたメモを完成させ、暗証番号を解き明かそう！</p>
             <figure class="image__container">
-              <img src="assets/images/T-shirt側メモ.jpg" alt="謎のメモ" title="謎のメモ">
+              <img src="assets/images/最後の謎メモ.jpg" alt="謎のメモ" title="謎のメモ" height="400" width="300">
             </figure>
           </div>
         </section>
