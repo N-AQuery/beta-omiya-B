@@ -66,7 +66,7 @@ const StageApp = Vue.createApp({
         ) {
         this.stage3Answer = true;
         this.stage3Message = this.okMessage3;
-        window.location.href = final.html;
+        window.location.href = 'final.html';
       } else {
         this.stage3Answer = false;
         this.stage3Message = this.ngMessage3;
