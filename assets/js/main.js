@@ -8,7 +8,7 @@ const StageApp = Vue.createApp({
       ngMessage3: 'この番号は違うようだ',
       /* 解答 */
       stage1CorrectAnswer: 'セントラルビル',
-      stage2CorrectAnswer: 'なんとか倉庫',
+      stage2CorrectAnswer: 'エクストラビル',
       stage3CorrectAnswer: '1111'||'１１１１',
       /* stage1 */
       stage1Answer: false, // 正解かどうか
