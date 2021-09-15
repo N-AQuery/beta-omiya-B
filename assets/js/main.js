@@ -34,7 +34,7 @@ const StageApp = Vue.createApp({
     stage1AnswerInput(stage1) {
       if(stage1 === this.stage1CorrectAnswer) {
         this.stage1Answer = true;
-        this.stage1Message = 'this.okMessage';
+        this.stage1Message = this.okMessage;
       } else {
         this.stage1Answer = false;
         this.stage1Message = this.ngMessage; 
@@ -65,7 +65,7 @@ const StageApp = Vue.createApp({
       if(stage3 === this.stage3CorrectAnswer
         ) {
         this.stage3Answer = true;
-        this.stage3Message = 'this.okMessage3';
+        this.stage3Message = this.okMessage3;
         window.location.href = 'final.html';
       } else {
         this.stage3Answer = false;
