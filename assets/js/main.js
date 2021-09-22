@@ -57,8 +57,8 @@ const StageApp = Vue.createApp({
     },
     /* stage2のクリア画面の動作を設定します */
     stage2NextStage() {
-      //this.stage2Answer = false;
-      //this.stage2Clear = true;
+      this.stage2Answer = false;
+      this.stage2Clear = true;
     },
     /* stage3の入力を判定します */
     stage3AnswerInput(stage3) {
