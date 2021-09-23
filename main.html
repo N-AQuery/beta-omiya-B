@@ -28,45 +28,39 @@
     <div id="stage">
       <!-- STAGE1　ここから -->
       <div id="sectionStage1"class="stage">
-        <!-- STAGE1問題セクション　ここから -->
+        <!-- STAGE1導入セクション　ここから -->
         <section class="section">
           <div class="container">
             <h2 class="section-title section-title--keycolorlight"><span class="section-title__stage">STAGE：1</span>犯人のアジトを突き止めよう</h2>
-            <p class="text-center">転校生が誘拐されてしまった！<br>
-              犯人は「きた公園」で転校生を誘拐し、西に逃げていったようだ。<br>
+            <p class="text-center">転校生がゆうかいされてしまった！<br>
+              犯人は「きた公園」で転校生をゆうかいし、西に逃げていったようだ。<br>
               さらに犯人は挑戦状を送ってきた！<br>
-              下に犯人の目撃情報を示した警察の地図と、犯人が送ってきた挑戦状が載っている。これをもとに、犯人のアジトを突き止めよう。</p>
+              下に犯人の目撃情報をまとめた警察の地図と、犯人が送ってきた挑戦状が載っている。これをもとに、犯人のアジトを突き止めよう。</p>
             <p class="text-center">一緒に捜査してくれる名探偵もいる。困ったときには、彼の話を聞いてみるのもいいかもしれない。</p>
           </div>
         </section>
-        <!-- STAGE1問題セクション　ここまで -->
+        <!-- STAGE1導入セクション　ここまで -->
+        <!-- STAGE1 問題セクション　ここから -->
         <div>
           <div class="stage-column__container section bg-color--gray">
             <div class="container">
               <div class="row">
-                <!-- STAGE1 上左　ここから -->
                 <div class="col-2">
-                  <!-- STAGE1 問題セクション　ここから -->
                   <h2>警察の地図</h2>
                   <figure class="image__container">
                     <img src="assets/images/カラフルけいさつの地図.jpg" alt="けいさつの地図" title="けいさつのちず">
                   </figure>
-                  <!-- STAGE1 問題セクション　ここまで -->
                 </div>
-                <!-- STAGE1　上左　ここまで -->
-                <!-- STAGE1　上右　ここから -->
                 <div class="col-2">
-                  <!-- STAGE1 問題セクション　ここから -->
                   <h2>犯人のからの挑戦状</h2>
                   <figure class="image__container">
                     <img src="assets/images/カラフルはんにんの地図.jpg" alt="はんにんのちず" title="はんにんのちず">
                   </figure>
-                  <!-- STAGE1 問題セクション　ここまで -->
                 </div>
-                <!-- STAGE1　上右　ここまで -->
               </div>
             </div>
           </div>
+          <!-- STAGE1 問題セクション　ここまで -->
         <!-- STAGE1解答入力セクション　ここから -->
         <section class="section bg-color--keycolor">
           <div class="container">
@@ -86,8 +80,8 @@
             <div class="clear-message">
               <div class="clear-message__title">STAGE：１  クリア！</div>
               <div class="clear-message__content">犯人のアジトを見事に突き止め、犯人を捕まえた！<br>
-                ところが、誘拐された転校生がいない！？<br>
-                犯人は転校生を別の場所に監禁したようだ。転校生の居場所を突き止めよう</div>
+                ところが、ゆうかいされた転校生がいない！？<br>
+                犯人は転校生を別の場所に監禁したようだ。転校生の居場所を突き止めよう。</div>
               <button v-on:click="stage1NextStage" onclick="location.href='#sectionStage2'" class="clear-message__btn btn">次のステージへ<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></button>
             </div>
           </div>
@@ -103,9 +97,10 @@
             <h2 class="section-title section-title--keycolorlight"><span class="section-title__stage">STAGE：2</span>転校生の居場所を突き止めよう</h2>
             <p class="text-center">犯人を捕まえることができた！<br>
               ところが、犯人は転校生を別の場所に監禁したようだ...<br>
-              犯人に話を聞くと、犯人は転校生とネットで知り合ったらしい。<br>
               転校生のブログから、転校生の居場所を突き止めよう！
               </p>
+            <div class="stage-column__container section bg-color--gray">
+            <div class="container">
             <div align="center">
               <table border="0">
                 <h2>転校生のブログ</h2>
@@ -114,6 +109,8 @@
 　　　　　　　　　　　　　　　　      <td><img src="assets/images/NNB0-1.png" alt="風景" title="風景" height="600" width="800"></td>
               </tr>
               </table>
+              </div>
+              </div>
             </div>
           </div>
         </section>
