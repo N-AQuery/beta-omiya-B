@@ -78,8 +78,9 @@
         <section v-if="stage1Answer" v-bind:class="{isClear:stage1Answer}" class="section section--clear bg-color--gray">
           <div class="container">
             <div class="clear-message">
-              <div class="clear-message__title">STAGE：１  クリア！</div>
-              <div class="clear-message__content">犯人のアジトを見事に突き止め、犯人を捕まえた！<br>
+              <div class="clear-message__title">犯人を捕まえた！</div>
+              <div class="clear-message__content">
+                犯人のアジトを見事に突き止め、犯人を捕まえた！<br>
                 ところが、ゆうかいされた転校生がいない！？<br>
                 犯人は転校生を別の場所に監禁したようだ。転校生の居場所を突き止めよう。</div>
               <button v-on:click="stage1NextStage" onclick="location.href='#sectionStage2'" class="clear-message__btn btn">次のステージへ<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></button>
@@ -97,18 +98,15 @@
             <h2 class="section-title section-title--keycolorlight"><span class="section-title__stage">STAGE：2</span>転校生の居場所を突き止めよう</h2>
             <p class="text-center">犯人を捕まえることができた！<br>
               ところが、犯人は転校生を別の場所に監禁したようだ...<br>
-              転校生のブログから、転校生の居場所を突き止めよう！
               </p>
             <div class="stage-column__container section bg-color--gray">
             <div class="container">
             <div align="center">
-              <table border="0">
                 <h2>転校生のブログ</h2>
 　　　　　　　　　　　　　　　　      <tr>
               <td><img src="assets/images/NNB80-1.png" alt="楽しみ！" title="楽しみ！" height="600" width="800"></td>
 　　　　　　　　　　　　　　　　      <td><img src="assets/images/NNB0-1.png" alt="風景" title="風景" height="600" width="800"></td>
               </tr>
-              </table>
               </div>
               </div>
             </div>
@@ -155,7 +153,7 @@
             　　　　転校生が監禁されている部屋にも同じようなメモがあるらしい<br>
             　　　　転校生の話から、破れたメモを完成させ、暗証番号を解き明かそう！</p>
             <figure class="image__container">
-              <img src="assets/images/NBNB.png" alt="謎のメモ" title="謎のメモ" height="600" width="300">
+              <img src="assets/images/NBNB.png" alt="謎のメモ" title="謎のメモ" height="300" width="300">
             </figure>
             <h2>転校生との会話</h2>
             <div class="story__note__outer bg-color--gray">
