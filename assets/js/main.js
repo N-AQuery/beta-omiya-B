@@ -11,7 +11,7 @@ const StageApp = Vue.createApp({
       /* 解答 */
       stage1CorrectAnswer: 'セントラルビル',
       stage2CorrectAnswer: 'エクストラビル',
-      stage3CorrectAnswer: '1111'||'１１１１',
+      stage3CorrectAnswer: '19920'||'１１１１',
       /* stage1 */
       stage1Answer: false, // 正解かどうか
       stage1: '',          // インプットエリアの入力の値
